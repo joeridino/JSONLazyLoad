@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSONLazyLoad Web Service Demo</title>
+        <meta charset="UTF-8">
+        <meta content="width=device-width" name="viewport">
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="../../jquery.jsonlazyload.min.js"></script>
+        <script src="demo.js"></script>
+        <link href="demo.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <h1>JSONLazyLoad Web Service Demo</h1>
+        <div class="button-container">
+            <button>Load items manually</button>
+        </div>
+        <div class="item-template">
+            <article>
+                <div class="left">
+                    <img alt="" src="">
+                </div>
+                <div class="right">
+                    <h2></h2>
+                    <time datetime="2015-01-30"></time>
+                </div>
+                <div class="clearfix"></div>
+            </article>
+        </div>
+        <p class="div-note">
+            This div is constrained in height and has its own scrollbar:
+        </p>
+        <div class="items-outer-container" id="items-container-constrained">
+            <div class="items-inner-container">
+                <div class="items" id="lazy-loader-constrained"></div>
+                <div class="loader" style="display: none;">
+                    <img alt="Loading" src="loading-icon.gif">
+                </div>
+            </div>
+        </div>
+        <p class="div-note">
+            This div will load more items when the window itself is scrolled:
+        </p>
+        <div class="items-outer-container" id="items-container-window">
+            <div class="items-inner-container">
+                <div class="items" id="lazy-loader_window"></div>
+                <div class="loader" style="display: none;">
+                    <img alt="Loading" src="loading-icon.gif">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

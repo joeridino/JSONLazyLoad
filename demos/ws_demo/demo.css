@@ -1,0 +1,82 @@
+body {
+    background-color: snow;
+    margin: 2%;
+}
+
+#items-container-constrained {
+    border: 20px solid red;
+    height: 200px;
+    overflow: auto;
+}
+
+#items-container-window {
+    border: 20px solid blue;
+}
+
+.items-outer-container {
+    margin-bottom: 40px;
+}
+
+.items-inner-container {
+    margin: 20px;
+}
+
+.items:not(:first-child) {
+    margin-top: 15px;
+}
+
+.items:not(:empty) + .loader {
+    margin-top: 20px;
+}
+
+.loader {
+    display: none;
+}
+
+p.instructions {
+    line-height: 150%;
+}
+
+.div-note {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.button-container {
+    margin-bottom: 30px;
+}
+
+.item-template {
+    display: none;
+}
+
+article {
+    clear: both;
+}
+
+article:not(:last-child) {
+    border-bottom: 2px dotted lightslategray;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+article h2 {
+    margin: 0;
+}
+
+article div.left {
+    float: left;
+    margin-right: 15px;
+}
+
+article div.right {
+    float: left;
+}
+
+article time {
+    display: block;
+}
+
+.clearfix {
+    clear: both;
+}
