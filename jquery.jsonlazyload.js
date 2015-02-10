@@ -1,7 +1,7 @@
 /*
     jquery.jasonlazyload.js
     2015-02-03
-    v1.0.0
+    v1.0.1
 
     The MIT License (MIT)
 
