@@ -98,8 +98,7 @@
             fetch_amount: fetch_amount,
             fetch_immediate: true,
             initial_offset: 0,
-            loader_delay: 250,
-            scroll_threshold: 0
+            loader_delay: 250
         },
         results: {
             item_callback: items_callback,

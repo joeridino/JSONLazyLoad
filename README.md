@@ -44,8 +44,7 @@ This shows a simple way to instantiate the lazy loader to grab ten Brad Pitt mov
                 fetch_amount: 10,
                 fetch_immediate: true,
                 initial_offset: 0,
-                loader_delay: 250,
-                scroll_threshold: 0
+                loader_delay: 250
             },
             elements: {
                 scroll_target: $(window)

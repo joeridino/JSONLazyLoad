@@ -63,10 +63,11 @@
                 loader_delay: 100,
 
                 // The number of pixels from the bottom of the scroll target
-                // that triggers a new Ajax request.  Normally this will be 0
-                // which means the Ajax request gets triggered when the user
-                // reaches the exact bottom of the scroll target.
-                scroll_threshold: 0
+                // that triggers a new Ajax request.  Normally, this would be 0
+                // if you want to have new items load when the scrollbar reaches
+                // its bottom, but due to some browser quirks setting this to a
+                // value of 1 is more reliable.
+                scroll_threshold: 1
             },
             // Files-based web service.
             files: {
@@ -390,7 +391,7 @@
          * Merges in user settings and fetches some items to start if specified.
          */
         init = function () {
-            settings = $.extend({}, default_settings, options);
+            settings = $.extend(true, {}, default_settings, options);
             offset = settings.behavior.initial_offset;
             if (settings.behavior.fetch_immediate) {
                 self.fetch_items(settings.behavior.fetch_amount);
