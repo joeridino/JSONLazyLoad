@@ -1,0 +1,18 @@
+{
+  "name": "jsonlazyload",
+  "version": "1.0.1",
+  "description": "JSONLazyLoad is a jQuery plugin that loads dynamic content from a server when the user scrolls or resizes the window.",
+  "main": "jquery.jsonlazyload.js",
+  "dependencies": {
+    "jquery": "1.11.2"
+  },
+  "keywords": [
+    "lazy-load",
+    "json"
+  ],
+  "authors": [
+    "Joe Ridino"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jridino/JSONLazyLoad"
+}
