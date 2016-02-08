@@ -4,11 +4,11 @@ v1.0.2
 *JSONLazyLoad is a jQuery plugin that loads dynamic content from a server when the user scrolls or resizes the window.*
 
 ## Features
-- Fully-configurable jQuery plugin that can be used to load JSON, JSONP, or any other content type (despite its name).
-- JSONLazyLoad ensures that there's always a scrollbar in your content; you only need to specify how many items to fetch per request and the library does the rest.
-- Show a loading graphic of your choice when users scroll and have been waiting more than N milliseconds.
-- Specify a scroll threshold that can trigger the Ajax call when the user reaches the very bottom of the scroll area or some amount of pixels above it.
-- Handles multiple lazy loaders on the same page.
+* Fully-configurable jQuery plugin that can be used to load JSON, JSONP, or any other content type (despite its name).
+* JSONLazyLoad ensures that there's always a scrollbar in your content; you only need to specify how many items to fetch per request and the library does the rest.
+* Show a loading graphic of your choice when users scroll and have been waiting more than N milliseconds.
+* Specify a scroll threshold that can trigger the Ajax call when the user reaches the very bottom of the scroll area or some amount of pixels above it.
+* Handles multiple lazy loaders on the same page.
 
 ## How do I use it?
 
