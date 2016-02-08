@@ -15,14 +15,12 @@ v1.0.2
 This shows a simple way to instantiate the lazy loader to grab ten Brad Pitt movies from the iTunes web service on each Ajax request.
 
 ```javascript
-/*jslint browser: true */
-/*global jQuery: false */
-
 (function ($) {
     'use strict';
 
     // Variable declaration.
-    var my_callback, settings;
+    var my_callback,
+        settings;
 
     // Define our callback when items are loaded from the server.
     // This function will append the movie poster image to the target element.
@@ -59,7 +57,6 @@ This shows a simple way to instantiate the lazy loader to grab ten Brad Pitt mov
                 url: 'http://itunes.apple.com/search?media=movie&explicit=No&term=Brad+Pitt'
             }
         };
-
         // Instantiate JSONLazyLoad with our settings.  This will also fire off the initial Ajax request(s).
         $('#lazy-loader').jsonlazyload(settings);
     });
