@@ -1,7 +1,7 @@
 /*
     jquery.jasonlazyload.js
-    2015-02-03
-    v1.0.2
+    2016-02-23
+    v1.1.0
 
     The MIT License (MIT)
 
@@ -71,14 +71,19 @@
             },
             // Files-based web service.
             files: {
+                // The number to add to files_offset after retrieving a file.
+                // Normally, this will be 1, but it can also be -1 to represent
+                // grabbing files in DESC order.
+                increment: 1,
+
+                // The offset that represents the last file.
+                last_offset: 0,
+
                 // The file pattern to use when retrieving the next file.
                 // e.g. If you specify "data[n].json" then the "[n]" will be
                 // replaced with the current page number.  So if the initial
                 // offset is 0, the first request will be to "data1.json".
-                pattern: '',
-
-                // The total number of files that exist on the server.
-                num_files: 0
+                pattern: ''
             },
             // jQuery elements.
             elements: {
@@ -308,25 +313,39 @@
          * 
          * @param data
          *     The data from the server, which has already been transformed by
-         *     jQuery into a JavaScript object based on the content type
-         *     specified.
+         *     jQuery based on the content type specified.
          */
         promise_done = function (data) {
+            var completed = false,
+                dataEmpty = false;
             if (settings.results.item_key) {
                 data = data[settings.results.item_key];
             }
 
-            if (!$.isArray(data)) {
-                return;
+            if (settings.files.pattern) {
+                completed = (files_offset === settings.files.last_offset);
+                files_offset += settings.files.increment;
+            } else {
+                if ($.isArray(data)) {
+                    offset += data.length;
+                    if (data.length === 0) {
+                        completed = true;
+                        dataEmpty = true;
+                    }
+                } else {
+                    offset += 1;
+                    if (data === '') {
+                        completed = true;
+                        dataEmpty = true;
+                    }
+                }
             }
 
-            offset += data.length;
-            if (settings.files.pattern) {
-                files_offset += 1;
-            }
-            if (data.length) {
+            if (!dataEmpty) {
                 settings.results.item_callback(self, data);
-            } else {
+            }
+
+            if (completed) {
                 loaded_all = true;
                 tear_down();
             }
@@ -393,6 +412,7 @@
         init = function () {
             settings = $.extend(true, {}, default_settings, options);
             offset = settings.behavior.initial_offset;
+            files_offset = settings.behavior.initial_offset;
             if (settings.behavior.fetch_immediate) {
                 self.fetch_items(settings.behavior.fetch_amount);
             } else {

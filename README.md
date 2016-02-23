@@ -1,5 +1,5 @@
 # JSONLazyLoad
-v1.0.2
+v1.1.0
 
 *JSONLazyLoad is a jQuery plugin that loads dynamic content from a server when the user scrolls or resizes the window.*
 
